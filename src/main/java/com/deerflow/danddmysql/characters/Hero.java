@@ -1,16 +1,26 @@
 package com.deerflow.danddmysql.characters;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Positive;
 
 @Entity
 public class Hero {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private HeroType type;
+
+    @NotNull
+    @Positive
     private Integer lifePoints;
 
     public Integer getId() {
